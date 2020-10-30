@@ -1,4 +1,4 @@
-import * as Lettera from 'lettera'
+import * as Lettera from './lib/lettera'
 
 //var apiClient = new Lettera.ApiClient()
 //apiClient.basePath = "https://lettera.api.ksfmedia.fi/v2"

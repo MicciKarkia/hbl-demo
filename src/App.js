@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import api from './api'
-import './App.css';
+import Accordion from './Components/Accordion'
 
 
 const App = () => {
@@ -27,71 +27,76 @@ const App = () => {
  
   console.log('article is:', article)
 
-  /*api.articleUuidGet(uuid, opts, (error, data, response) => {
-    if (error) {
-      console.error(error);
-    } else {
-      for (const item of data.body) {
-        if (item.html) {
-          console.log(`<p>${item.html}</p>`)
-        } else if (item.headline) {
-          console.log(`<h2>${item.headline}</h2>`)
-        } else if (item.image) {
-          console.log(`<img src="${item.image.url}" alt="${item.image.caption}" />`)
-        } else if (item.box) {
-          console.log(`<div class="fact-box"><h2>${item.box.headline}</h2><h3>${item.box.title}</h3><p>${item.box.content}</p></div>`)
-        }
-      }
-      //console.log('API called successfully. Returned data: ', data);
-    }
-  });*/
-
   const articleBody = () => {
     return article.body.map((block, index) =>
       <div key={index}>
         {block.headline &&
-          <h2>{block.headline}</h2>
+          <h2 className="headline-text">{block.headline}</h2>
         }
         {block.html &&
-          <p>{block.html}</p>
+          <p className="text" dangerouslySetInnerHTML={{__html: block.html}}></p>
         }
         {block.image &&
-          <figure>
+          <figure className="image-container">
             <img src={block.image.url} alt=""/>
-            <figcaption>{block.image.caption} <b>BILD: {block.image.byline}</b></figcaption>
+            <figcaption className="image-text">{block.image.caption} <span className="image-photographer">BILD: {block.image.byline}</span></figcaption>
         </figure>
         }
         {block.box &&
-          <div className="fact-box">
-            <h2>${block.box.headline}</h2>
-            <h3>${block.box.title}</h3>
-            <p>${block.box.content}</p>
-          </div>
+          <Accordion headline={block.box.headline} title={block.box.title} content={block.box.content} />
         }
       </div>
     )
   }
 
   return (
-    <>
+    <div className="article-container">
       {article ?
-        <article>
-          <h1>{article.title}</h1>
-          <figure>
+        <div className="article">
+          <h1 className="header-headline">{article.title}</h1>
+          <figure className="image-container">
             <img src={article.mainImage.url} alt=""/>
-            <figcaption>{article.mainImage.caption} <b>BILD: {article.mainImage.byline}</b></figcaption>
+            <figcaption className="image-text">{article.mainImage.caption} <span className="image-photographer">BILD: {article.mainImage.byline}</span></figcaption>
           </figure>
           <p className="preamble">{article.preamble}</p>
           {articleBody()}
-        </article>
+        </div>
         :
         <div>...loading</div>
       }
       
       
 
-    </>
+    </div>
   )
 }
 
 export default App
+
+/*
+const articleBody = () => {
+  return article.body.map((block, index) =>
+    <div key={index}>
+      {block.headline &&
+        <h2>{block.headline}</h2>
+      }
+      {block.html &&
+        <p dangerouslySetInnerHTML={{__html: block.html}}></p>
+      }
+      {block.image &&
+        <figure>
+          <img src={block.image.url} alt=""/>
+          <figcaption>{block.image.caption} <b>BILD: {block.image.byline}</b></figcaption>
+      </figure>
+      }
+      {block.box &&
+        <div className="fact-box">
+          <h2 dangerouslySetInnerHTML={{__html: block.box.headline}}></h2>
+          <h3 dangerouslySetInnerHTML={{__html: block.box.title}}></h3>
+          <p dangerouslySetInnerHTML={{__html: block.box.content}}></p>
+        </div>
+      }
+    </div>
+  )
+}
+*/
