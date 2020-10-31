@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/hbl-demo/static/css/main.3d0e799d.chunk.css",
+    "main.js": "/hbl-demo/static/js/main.211a34e0.chunk.js",
+    "main.js.map": "/hbl-demo/static/js/main.211a34e0.chunk.js.map",
+    "runtime-main.js": "/hbl-demo/static/js/runtime-main.d2f03e44.js",
+    "runtime-main.js.map": "/hbl-demo/static/js/runtime-main.d2f03e44.js.map",
+    "static/js/2.85e15a38.chunk.js": "/hbl-demo/static/js/2.85e15a38.chunk.js",
+    "static/js/2.85e15a38.chunk.js.map": "/hbl-demo/static/js/2.85e15a38.chunk.js.map",
+    "static/js/3.b1720583.chunk.js": "/hbl-demo/static/js/3.b1720583.chunk.js",
+    "static/js/3.b1720583.chunk.js.map": "/hbl-demo/static/js/3.b1720583.chunk.js.map",
+    "index.html": "/hbl-demo/index.html",
+    "static/css/main.3d0e799d.chunk.css.map": "/hbl-demo/static/css/main.3d0e799d.chunk.css.map",
+    "static/js/2.85e15a38.chunk.js.LICENSE.txt": "/hbl-demo/static/js/2.85e15a38.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d2f03e44.js",
+    "static/js/2.85e15a38.chunk.js",
+    "static/css/main.3d0e799d.chunk.css",
+    "static/js/main.211a34e0.chunk.js"
+  ]
+}
