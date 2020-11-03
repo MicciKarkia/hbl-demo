@@ -10,10 +10,13 @@ https://www.hbl.fi/styleguide-2/
 1. Kloonaa repo
 2. npm install
 3. npm start
+4. selaimeen aukeaa [http://localhost:3000](http://localhost:3000)
 
 
 
 
+
+--------------------------------------------------------------------------------------------------------------------------------------
 
 # Getting Started with Create React App
 
