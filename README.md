@@ -1,3 +1,16 @@
+# Ohjeet:
+
+1. Kloonaa repo
+2. npm install
+3. npm start
+
+# HBL demo
+
+Tässä on käytetty React Hooks ja CSS
+
+Tyyli seuraa HBL styleguide:
+https://www.hbl.fi/styleguide-2/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
